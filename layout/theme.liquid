@@ -67,7 +67,7 @@
     {% assign twitter_handle = settings.social_twitter | split: 'twitter.com/' | last %}
     {%
        render 'social-meta-tags',
-       twitter_handle: twitter_handle %}
+     twitter_handle: twitter_handle %}
 
     <link
       rel="preload"
@@ -117,12 +117,13 @@
     data-instant-allow-query-string
     {% if settings.reduce_animations %}data-reduce-animations{% endif %}>
 
-    <h1>Hello...................My Shopify</h1>
+    <h1>Hello...................My Shopify Store</h1>
     <script>
       document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');
       if (window.Shopify && window.Shopify.designMode) 
         document.documentElement.className += ' in-theme-editor';
       
+
       if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) 
         document.documentElement.className = document.documentElement.className.replace(/\bno-touch\b/, 'has-touch');
       
@@ -172,8 +173,8 @@
     <div style="--background-color: {{ settings.color_background }}">
       {%
          render 'age-gate',
-         id: 'page',
-         sections: content_for_layout, %}
+       id: 'page',
+       sections: content_for_layout, %}
     </div>
 
     <div class="intersection-target" data-header-intersection-target></div>
@@ -191,7 +192,8 @@
     {% comment %}
     Below are various templates used in JavaScript
     {% endcomment %}
-    <div style="display: none;"
+    <div
+      style="display: none;"
       aria-hidden="true"
       data-templates>
       {% comment %}Inject message-banner begin{% endcomment %}
@@ -225,7 +227,7 @@
                 <span class="atc-banner--product-title--icon">
                   {%
                      render 'icon-library',
-                     id: 'icon-checkmark', %}
+                   id: 'icon-checkmark', %}
                 </span>
                 {{ 'add_to_cart_banner.general.product_added' | t }}
               </h2>
@@ -472,8 +474,8 @@
                 <button class="product-compare-drawer__remove" data-product-compare-drawer-remove>
                   {%
                      render 'icon-library',
-                     id: 'icon-remove',
-                     icon_class: 'product-compare-drawer__remove-icon', %}
+                   id: 'icon-remove',
+                   icon_class: 'product-compare-drawer__remove-icon', %}
                 </button>
               </div>
             </template>
@@ -496,10 +498,10 @@
           <div class="product-compare-drawer__actions">
             <a
               class="
-                                product-compare-drawer__link
-                                button-primary
-                                disabled
-                              "
+                                                product-compare-drawer__link
+                                                button-primary
+                                                disabled
+                                              "
               href="{{ routes.root_url }}"
               data-product-compare-drawer-link
               data-product-compare-drawer-link-text="{{ 'product_compare.compare' | t }}">
